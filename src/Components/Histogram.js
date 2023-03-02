@@ -25,7 +25,7 @@ function Bar(props) {
 
   return (
     <div style={barStyle}>
-      <div style={innerBar}></div>
+      <div style={innerBar}>%{percentage}</div>
     </div>
   );
 }
@@ -35,7 +35,7 @@ Bar.propTypes = {
 };
 
 function Histogram(props) {
-  
+
   const { bars, barCount } = props;
 
   const divStyle = {
@@ -45,9 +45,9 @@ function Histogram(props) {
 
   return (
     <div style={divStyle}>
-     
-      {bars.map((b,i) => i <= barCount ? <Bar  percentage={b}/> : "")}
-     
+
+      {bars.map((b, i) => i <= barCount ? <Bar percentage={b} /> : "")}
+
     </div>
   );
 }
